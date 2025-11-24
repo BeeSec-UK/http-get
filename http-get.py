@@ -41,7 +41,7 @@ def banner():
     @BeeSec
     Helping you Bee Secure - https://github.com/BeeSec-UK/
 
-usage: http_get_improved.py -i <input file> | -x <xml file> | -o <output_dir>
+usage: http-get.py -i <input file> | -x <xml file> | -o <output_dir>
 """
     print(COLOURS["blue"] + banner_text + SYMBOLS["end"])
 
