@@ -125,7 +125,7 @@ def analyze_report(report, output_files):
 
     for host in report.hosts:
         for service in host.services:
-            if "http" in service.service.lower():
+            if "http" == service.service.lower() and service.tunnel.lower() != 'ssl':
                 total_services += 1
                 analyze_service(host.address, service.port, output_files)
 
