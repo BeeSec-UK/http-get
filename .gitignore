@@ -1,0 +1,8 @@
+*.xml
+targets.txt
+venv/
+.venv/
+.idea/
+output/
+main.py
+http_get_improved.py
