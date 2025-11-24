@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # Author: Thomas Beeney and Max Baldock
-# Version: 1.3
+# Version: 1.2
 # HTTP-GET Tool for removing false positives when auditing plaintext HTTP services
 
 import argparse
@@ -79,6 +79,7 @@ def close_output_files(files: dict):
 
 
 def main():
+    banner()
     args = parse_arguments()
 
     if args.xfile:
@@ -215,4 +216,3 @@ def handle_request_exception(host: str, port: str, exception: Exception, output_
 
 if __name__ == "__main__":
     main()
-    banner()
