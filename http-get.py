@@ -1,16 +1,15 @@
 #!/usr/bin/python
 # Author: Thomas Beeney and Max Baldock
-# Version: 1.1
+# Version: 1.3
 # HTTP-GET Tool for removing false positives when auditing plaintext HTTP services
 
-import requests
-import sys
 import argparse
 import os
-from libnmap.parser import NmapParser
+import sys
+
+import requests
 import urllib3
-import io
-import contextlib
+from libnmap.parser import NmapParser
 
 urllib3.disable_warnings()
 
@@ -213,14 +212,6 @@ def handle_request_exception(host: str, port: str, exception: Exception, output_
     output_files["errorlog"].write(f'Error occurred while testing {host}:{port}: {exception}\n')
     output_files["log"].write(f"{host}:{port}, Error, n\n")
 
-
-def get_terminal_output():
-    """Capture the terminal output and return it as a string."""
-    output = io.StringIO()
-    with contextlib.redirect_stdout(output):
-        main()
-        banner()
-    return output.getvalue()
 
 if __name__ == "__main__":
     main()
